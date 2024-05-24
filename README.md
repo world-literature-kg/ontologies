@@ -1,1 +1,1 @@
-# ontologies
+# WL-KG Ontologies
