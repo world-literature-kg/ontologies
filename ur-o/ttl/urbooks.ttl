@@ -1,0 +1,281 @@
+@prefix : <https://purl.archive.org/domain/urbooks#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix urb: <https://purl.archive.org/domain/urbooks#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@base <https://purl.archive.org/domain/urbooks#> .
+
+<https://purl.archive.org/domain/urbooks> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/vocab/frbr/core#subject
+<http://purl.org/vocab/frbr/core#subject> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <http://purl.org/vocab/frbr/core#Endeavour> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty ;
+                                              rdfs:range <http://www.w3.org/ns/prov#Organization> .
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+<http://www.w3.org/ns/prov#wasAttributedTo> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://www.w3.org/ns/prov#Agent> ;
+                                            rdfs:range <http://purl.org/vocab/frbr/core#Endeavour> .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:ObjectProperty ;
+                                           rdfs:range <http://purl.org/vocab/frbr/core#Manifestation> .
+
+
+###  https://purl.archive.org/domain/urbooks#expertGeneratedSubject
+urb:expertGeneratedSubject rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#subject> ;
+                           rdfs:domain <http://purl.org/spar/fabio/ControlledVocabulary> ;
+                           rdfs:range <http://purl.org/vocab/frbr/core#Subject> .
+
+
+###  https://purl.archive.org/domain/urbooks#numberOfRatings
+urb:numberOfRatings rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://purl.archive.org/domain/urbooks#numberOfReaders
+urb:numberOfReaders rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://purl.archive.org/domain/urbooks#rated
+urb:rated rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://purl.archive.org/domain/urbooks#received
+urb:received rdf:type owl:ObjectProperty ;
+             rdfs:range <https://purl.archive.org/people-and-media#Reception> .
+
+
+###  https://purl.archive.org/domain/urbooks#userGeneratedSubject
+urb:userGeneratedSubject rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#subject> ;
+                         rdfs:domain <http://purl.org/spar/fabio/Folksonomy> ;
+                         rdfs:range <http://purl.org/vocab/frbr/core#Subject> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://purl.archive.org/domain/urbooks#notable
+urb:notable rdf:type owl:DatatypeProperty ;
+            rdfs:domain <https://purl.archive.org/people-and-media#Reception> .
+
+
+###  https://purl.archive.org/domain/urbooks#rating
+urb:rating rdf:type owl:DatatypeProperty ;
+           rdfs:domain <https://purl.archive.org/people-and-media#Reception> .
+
+
+###  https://purl.archive.org/domain/urbooks#ratingsCount
+urb:ratingsCount rdf:type owl:DatatypeProperty ;
+                 rdfs:domain <https://purl.archive.org/people-and-media#Reception> .
+
+
+###  https://purl.archive.org/domain/urbooks#readers
+urb:readers rdf:type owl:DatatypeProperty ;
+            rdfs:domain <https://purl.archive.org/people-and-media#Reception> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/spar/fabio/ControlledVocabulary
+<http://purl.org/spar/fabio/ControlledVocabulary> rdf:type owl:Class .
+
+
+###  http://purl.org/spar/fabio/Folksonomy
+<http://purl.org/spar/fabio/Folksonomy> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.org/vocab/frbr/core#Endeavour> .
+
+
+###  http://purl.org/vocab/frbr/core#Endeavour
+<http://purl.org/vocab/frbr/core#Endeavour> rdf:type owl:Class .
+
+
+###  http://purl.org/vocab/frbr/core#Expression
+<http://purl.org/vocab/frbr/core#Expression> rdf:type owl:Class ;
+                                             owl:equivalentClass <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> .
+
+
+###  http://purl.org/vocab/frbr/core#Manifestation
+<http://purl.org/vocab/frbr/core#Manifestation> rdf:type owl:Class ;
+                                                owl:equivalentClass <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization> .
+
+
+###  http://purl.org/vocab/frbr/core#Place
+<http://purl.org/vocab/frbr/core#Place> rdf:type owl:Class .
+
+
+###  http://purl.org/vocab/frbr/core#Subject
+<http://purl.org/vocab/frbr/core#Subject> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://purl.org/vocab/frbr/core#Endeavour> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://purl.org/vocab/frbr/core#Endeavour> .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/domain/urbooks#Awarded
+urb:Awarded rdf:type owl:Class ;
+            rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalRole> .
+
+
+###  https://purl.archive.org/domain/urbooks#Edition
+urb:Edition rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/vocab/frbr/core#Manifestation> ;
+            owl:disjointWith urb:WebManifestation .
+
+
+###  https://purl.archive.org/domain/urbooks#Nominated
+urb:Nominated rdf:type owl:Class ;
+              rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalRole> .
+
+
+###  https://purl.archive.org/domain/urbooks#Prize
+urb:Prize rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                owl:someValuesFrom urb:Awarded
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                owl:someValuesFrom urb:Nominated
+                                              ]
+                                            )
+                              ] ;
+          rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+
+
+###  https://purl.archive.org/domain/urbooks#ProfessionalRole
+urb:ProfessionalRole rdf:type owl:Class ;
+                     rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalRole> .
+
+
+###  https://purl.archive.org/domain/urbooks#Publication
+urb:Publication rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> ;
+                                                             owl:someValuesFrom <http://purl.org/vocab/frbr/core#Place>
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> ;
+                                                             owl:someValuesFrom urb:ProfessionalRole
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval> ;
+                                                             owl:someValuesFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval>
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+                                                             owl:someValuesFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization>
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> .
+
+
+###  https://purl.archive.org/domain/urbooks#WebManifestation
+urb:WebManifestation rdf:type owl:Class ;
+                     rdfs:subClassOf <http://purl.org/vocab/frbr/core#Manifestation> .
+
+
+###  https://purl.archive.org/people-and-media#BiographicalRole
+<https://purl.archive.org/people-and-media#BiographicalRole> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/people-and-media#BiographicalSituation
+<https://purl.archive.org/people-and-media#BiographicalSituation> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/people-and-media#Reception
+<https://purl.archive.org/people-and-media#Reception> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://purl.archive.org/domain/urbooks#Goodreads
+urb:Goodreads rdf:type owl:NamedIndividual ,
+                       urb:WebManifestation .
+
+
+###  https://purl.archive.org/domain/urbooks#GoogleBooks
+urb:GoogleBooks rdf:type owl:NamedIndividual ,
+                         urb:WebManifestation .
+
+
+###  https://purl.archive.org/domain/urbooks#OpenLibrary
+urb:OpenLibrary rdf:type owl:NamedIndividual ,
+                         urb:WebManifestation .
+
+
+###  https://purl.archive.org/domain/urbooks#Wikidata
+urb:Wikidata rdf:type owl:NamedIndividual ,
+                      urb:WebManifestation .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
