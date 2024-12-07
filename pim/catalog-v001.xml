@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/1999/02/22-rdf-syntax-ns#" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns"/>
+    <uri id="Imports Wizard Entry" name="http://xmlns.com/foaf/0.1/" uri="http://xmlns.com/foaf/spec/index.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/vocab/vann/" uri="file:/home/nbdotti62/Scaricati/vann-vocab-20100607.rdf"/>
     <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://ontologydesignpatterns.org/wiki/index.php?title=Special:ClickHandler&amp;link=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl&amp;message=Ontology%20Ontology:DOLCE+DnS%20Ultralite&amp;from_page_id=1129&amp;update=update"/>
     <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-20130430" uri="http://www.w3.org/ns/prov-o"/>
     <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://ontologydesignpatterns.org/wiki/index.php?title=Special:ClickHandler&amp;link=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl&amp;message=Ontology%20Ontology:DOLCE+DnS%20Ultralite&amp;from_page_id=1129&amp;update=update"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1710687743524" name="https://purl.archive.org/people-and-media" uri="PeopleInTheMedia.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1727097780560" name="https://purl.archive.org/people-and-media" uri="PeopleInTheMedia.owl"/>
     </group>
 </catalog>

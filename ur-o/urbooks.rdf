@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/marco/ontologies/2024/2/untitled-ontology-31/"
-     xml:base="http://www.semanticweb.org/marco/ontologies/2024/2/untitled-ontology-31/"
+<rdf:RDF xmlns="https://purl.archive.org/domain/urbooks#"
+     xml:base="https://purl.archive.org/domain/urbooks"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:oa="http://www.w3.org/ns/oa#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:urb="https://purl.archive.org/domain/urbooks#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -21,6 +22,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/vocab/frbr/core#subject -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/frbr/core#subject">
+        <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Endeavour"/>
+    </owl:ObjectProperty>
     
 
 
@@ -73,10 +82,54 @@
     
 
 
+    <!-- https://purl.archive.org/domain/urbooks#expertGeneratedSubject -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#expertGeneratedSubject">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#subject"/>
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/ControlledVocabulary"/>
+        <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#numberOfRatings -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#numberOfRatings">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#numberOfReaders -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#numberOfReaders">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#rated -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#rated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.archive.org/domain/urbooks#received -->
 
     <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#received">
         <rdfs:range rdf:resource="https://purl.archive.org/people-and-media#Reception"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#userGeneratedSubject -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#userGeneratedSubject">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#subject"/>
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Folksonomy"/>
+        <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Subject"/>
     </owl:ObjectProperty>
     
 
@@ -135,6 +188,20 @@
     
 
 
+    <!-- http://purl.org/spar/fabio/ControlledVocabulary -->
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/ControlledVocabulary"/>
+    
+
+
+    <!-- http://purl.org/spar/fabio/Folksonomy -->
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/Folksonomy">
+        <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Endeavour"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/vocab/frbr/core#Endeavour -->
 
     <owl:Class rdf:about="http://purl.org/vocab/frbr/core#Endeavour"/>
@@ -160,6 +227,12 @@
     <!-- http://purl.org/vocab/frbr/core#Place -->
 
     <owl:Class rdf:about="http://purl.org/vocab/frbr/core#Place"/>
+    
+
+
+    <!-- http://purl.org/vocab/frbr/core#Subject -->
+
+    <owl:Class rdf:about="http://purl.org/vocab/frbr/core#Subject"/>
     
 
 
@@ -213,6 +286,15 @@
 
     <owl:Class rdf:about="https://purl.archive.org/domain/urbooks#Awarded">
         <rdfs:subClassOf rdf:resource="https://purl.archive.org/people-and-media#BiographicalRole"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#Edition -->
+
+    <owl:Class rdf:about="https://purl.archive.org/domain/urbooks#Edition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+        <owl:disjointWith rdf:resource="https://purl.archive.org/domain/urbooks#WebManifestation"/>
     </owl:Class>
     
 
@@ -285,6 +367,14 @@
     
 
 
+    <!-- https://purl.archive.org/domain/urbooks#WebManifestation -->
+
+    <owl:Class rdf:about="https://purl.archive.org/domain/urbooks#WebManifestation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+    </owl:Class>
+    
+
+
     <!-- https://purl.archive.org/people-and-media#BiographicalRole -->
 
     <owl:Class rdf:about="https://purl.archive.org/people-and-media#BiographicalRole"/>
@@ -300,9 +390,52 @@
     <!-- https://purl.archive.org/people-and-media#Reception -->
 
     <owl:Class rdf:about="https://purl.archive.org/people-and-media#Reception"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#Goodreads -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/domain/urbooks#Goodreads">
+        <rdf:type rdf:resource="https://purl.archive.org/domain/urbooks#WebManifestation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#GoogleBooks -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/domain/urbooks#GoogleBooks">
+        <rdf:type rdf:resource="https://purl.archive.org/domain/urbooks#WebManifestation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#OpenLibrary -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/domain/urbooks#OpenLibrary">
+        <rdf:type rdf:resource="https://purl.archive.org/domain/urbooks#WebManifestation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#Wikidata -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/domain/urbooks#Wikidata">
+        <rdf:type rdf:resource="https://purl.archive.org/domain/urbooks#WebManifestation"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

@@ -1,25 +1,27 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/marco/ontologies/2024/2/untitled-ontology-30/"
-     xml:base="http://www.semanticweb.org/marco/ontologies/2024/2/untitled-ontology-30/"
+<rdf:RDF xmlns="https://purl.archive.org/domain/urwriters#"
+     xml:base="https://purl.archive.org/domain/urwriters"
+     xmlns:cc="http://web.resource.org/cc/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:oa="http://www.w3.org/ns/oa#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:urw="https://purl.archive.org/domain/urwriters#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms/">
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.archive.org/domain/urwriters">
-        <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
         <owl:imports rdf:resource="https://purl.archive.org/people-and-media"/>
         <owl:imports rdf:resource="https://purl.archive.org/domain/urbooks"/>
-        <terms:abstract xml:lang="en">In today’s media and in the Web of Data, non-Western people still suffer a lack of representation. In our work, we address this issue by presenting a pipeline for collecting and semantically encoding Wikipedia biographies of writers who are under-represented due to their non-Western origins, or their legal status in a country. The two main components of the ontology will be described, together with a framework for mapping textual biographies to their corresponding semantic representations. A description of the data set, and some examples of biographical texts conversion to the Ontology Classes, will be provided.</terms:abstract>
-        <terms:bibliographicCitation>Marco Antonio Stranisci, Viviana Patti, and Rossana Damiano. Representing the Under-Represented: a Dataset of Post-Colonial, and Migrant Writers. In 3rd Conference on Language, Data and Knowledge (LDK 2021). Open Access Series in Informatics (OASIcs), Volume 93, pp. 7:1-7:14, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2021)
+        <dcterms:abstract xml:lang="en">In today’s media and in the Web of Data, non-Western people still suffer a lack of representation. In our work, we address this issue by presenting a pipeline for collecting and semantically encoding Wikipedia biographies of writers who are under-represented due to their non-Western origins, or their legal status in a country. The two main components of the ontology will be described, together with a framework for mapping textual biographies to their corresponding semantic representations. A description of the data set, and some examples of biographical texts conversion to the Ontology Classes, will be provided.</dcterms:abstract>
+        <dcterms:bibliographicCitation>Marco Antonio Stranisci, Viviana Patti, and Rossana Damiano. Representing the Under-Represented: a Dataset of Post-Colonial, and Migrant Writers. In 3rd Conference on Language, Data and Knowledge (LDK 2021). Open Access Series in Informatics (OASIcs), Volume 93, pp. 7:1-7:14, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2021)
 
-Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, Miguel Ceriani, and Rossana Damiano. &quot;The World Literature Knowledge Graph.&quot; In International Semantic Web Conference, pp. 435-452. Cham: Springer Nature Switzerland, 2023.</terms:bibliographicCitation>
-        <terms:contributor>Rossana Damiano</terms:contributor>
-        <terms:creator>Marco Antonio Stranisci</terms:creator>
-        <terms:license>CC0-1.0</terms:license>
+Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, Miguel Ceriani, and Rossana Damiano. &quot;The World Literature Knowledge Graph.&quot; In International Semantic Web Conference, pp. 435-452. Cham: Springer Nature Switzerland, 2023.</dcterms:bibliographicCitation>
+        <dcterms:contributor>Rossana Damiano</dcterms:contributor>
+        <dcterms:creator>Marco Antonio Stranisci</dcterms:creator>
+        <dcterms:license>CC0-1.0</dcterms:license>
     </owl:Ontology>
     
 
@@ -32,6 +34,18 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
     
 
 
@@ -64,9 +78,34 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     
 
 
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/language"/>
+    
+
+
+    <!-- http://purl.org/vocab/frbr/core#embodiment -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/frbr/core#embodiment">
+        <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesRole -->
 
     <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesRole"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
     
 
 
@@ -79,9 +118,32 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     
 
 
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction -->
 
     <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
     
 
 
@@ -116,6 +178,167 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasEnd">
         <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
         <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#numberOfRatings -->
+
+    <rdf:Description rdf:about="https://purl.archive.org/domain/urbooks#numberOfRatings">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#numberOfReaders -->
+
+    <rdf:Description rdf:about="https://purl.archive.org/domain/urbooks#numberOfReaders">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#rated -->
+
+    <rdf:Description rdf:about="https://purl.archive.org/domain/urbooks#rated">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#birthCountry -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#birthCountry">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#birthYear -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#birthYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#countryOfBirth -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#countryOfBirth">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+            <rdf:Description rdf:about="https://purl.archive.org/domain/urwriters#birthCountry"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#countryOfDeath -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#countryOfDeath">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+            <rdf:Description rdf:about="https://purl.archive.org/domain/urwriters#deathCountry"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#deathCountry -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#deathCountry">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#deathYear -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#deathYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#isLinkedTo -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#publishingLanguage -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#publishingLanguage">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+            <rdf:Description rdf:about="http://purl.org/dc/terms/language"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#wasPublishedBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#wasPublishedBy">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#wasPublishedWhen -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#wasPublishedWhen">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#wasPublishedWhere -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#wasPublishedWhere">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#yearOfBirth -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#yearOfBirth">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+            <rdf:Description rdf:about="https://purl.archive.org/domain/urwriters#birthYear"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#yearOfDeath -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#yearOfDeath">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+            <rdf:Description rdf:about="https://purl.archive.org/domain/urwriters#deathYear"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -221,6 +444,12 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role -->
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
     
 
 
@@ -492,6 +721,12 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     
 
 
+    <!-- https://purl.archive.org/people-and-media#PersonalAttribute -->
+
+    <owl:Class rdf:about="https://purl.archive.org/people-and-media#PersonalAttribute"/>
+    
+
+
     <!-- https://purl.archive.org/people-and-media#Reception -->
 
     <owl:Class rdf:about="https://purl.archive.org/people-and-media#Reception"/>
@@ -518,5 +753,5 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
 
 
 
-<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

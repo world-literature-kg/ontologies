@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.org/spar/fabio/2019-02-19" uri="file:/home/marco/Documenti/unito/semantic-aware-bias/fabio.xml"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/spar/fabio/2019-02-19" uri="file:/home/nbdotti62/Documenti/semantic-aware-bias/fabio.xml"/>
+    <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.org/dc/elements/1.1/" uri="https://protege.stanford.edu/plugins/owl/dc/dublincore.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/time#2016" uri="http://www.w3.org/2006/time"/>
     <uri id="Imports Wizard Entry" name="https://purl.archive.org/people-and-media" uri="file:/home/marco/semantic-aware-bias/ontologies/pim/PeopleInTheMedia.owl"/>
@@ -8,7 +11,7 @@
     <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://ontologydesignpatterns.org/wiki/index.php?title=Special:ClickHandler&amp;link=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl&amp;message=Ontology%20Ontology:DOLCE+DnS%20Ultralite&amp;from_page_id=1129&amp;update=update"/>
     <uri id="Imports Wizard Entry" name="https://purl.archive.org/people-and-media" uri="file:/home/marco/semantic-aware-bias/ontologies/pim/PeopleInTheMedia.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1713272809405" name="http://www.semanticweb.org/marco/ontologies/2024/2/untitled-ontology-30/" uri="urwriters.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1713272809405" name="http://www.semanticweb.org/marco/ontologies/2024/2/untitled-ontology-31/" uri="urbooks.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1733558792377" name="https://purl.archive.org/domain/urbooks" uri="urbooks.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1733558792377" name="https://purl.archive.org/domain/urwriters" uri="urwriters.rdf"/>
     </group>
 </catalog>
