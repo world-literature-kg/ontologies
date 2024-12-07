@@ -13,7 +13,6 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.archive.org/domain/urwriters">
-        <owl:imports rdf:resource="https://purl.archive.org/people-and-media"/>
         <owl:imports rdf:resource="https://purl.archive.org/domain/urbooks"/>
         <dcterms:abstract xml:lang="en">In today’s media and in the Web of Data, non-Western people still suffer a lack of representation. In our work, we address this issue by presenting a pipeline for collecting and semantically encoding Wikipedia biographies of writers who are under-represented due to their non-Western origins, or their legal status in a country. The two main components of the ontology will be described, together with a framework for mapping textual biographies to their corresponding semantic representations. A description of the data set, and some examples of biographical texts conversion to the Ontology Classes, will be provided.</dcterms:abstract>
         <dcterms:bibliographicCitation>Marco Antonio Stranisci, Viviana Patti, and Rossana Damiano. Representing the Under-Represented: a Dataset of Post-Colonial, and Migrant Writers. In 3rd Conference on Language, Data and Knowledge (LDK 2021). Open Access Series in Informatics (OASIcs), Volume 93, pp. 7:1-7:14, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2021)

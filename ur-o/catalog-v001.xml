@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://purl.archive.org/people-and-media" uri="https://purl.archive.org/people-in-the-media"/>
+    <uri id="Imports Wizard Entry" name="https://purl.archive.org/domain/urbooks" uri="https://purl.archive.org/urbooks"/>
+    <uri id="Imports Wizard Entry" name="https://purl.archive.org/domain/urbooks" uri="https://raw.githubusercontent.com/world-literature-kg/ontologies/refs/heads/main/ur-o/urbooks.rdf"/>
     <uri id="Imports Wizard Entry" name="http://purl.org/spar/fabio/2019-02-19" uri="file:/home/marco/Documenti/unito/semantic-aware-bias/fabio.xml"/>
     <uri id="Imports Wizard Entry" name="http://purl.org/spar/fabio/2019-02-19" uri="file:/home/nbdotti62/Documenti/semantic-aware-bias/fabio.xml"/>
     <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
