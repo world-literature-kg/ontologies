@@ -2,13 +2,20 @@
 @prefix cc: <http://web.resource.org/cc/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pim: <https://purl.archive.org/people-and-media#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix urb: <https://purl.archive.org/domain/urbooks#> .
 @prefix urw: <https://purl.archive.org/domain/urwriters#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <https://purl.archive.org/domain/urwriters#> .
 
@@ -55,96 +62,101 @@ dcterms:language rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/vocab/frbr/core#embodiment
-<http://purl.org/vocab/frbr/core#embodiment> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://purl.org/vocab/frbr/core#Expression> ;
-                                             owl:propertyChainAxiom ( <http://purl.org/vocab/frbr/core#embodiment>
-                                                                      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn>
-                                                                      <http://www.w3.org/ns/prov#wasAssociatedWith>
-                                                                    ) .
+frbr:embodiment rdf:type owl:ObjectProperty ;
+                rdfs:domain frbr:Expression ;
+                owl:propertyChainAxiom ( frbr:embodiment
+                                         dul:isParticipantIn
+                                         prov:wasAssociatedWith
+                                       ) .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesRole
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesRole> rdf:type owl:ObjectProperty .
+dul:definesRole rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> rdf:type owl:ObjectProperty .
+dul:hasLocation rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole> rdf:type owl:ObjectProperty ;
-                                                                rdfs:domain <http://www.w3.org/ns/prov#Person> ;
-                                                                rdfs:range <https://purl.archive.org/people-and-media#BiographicalRole> .
+dul:hasRole rdf:type owl:ObjectProperty ;
+            rdfs:domain prov:Person ;
+            rdfs:range pim:BiographicalRole .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting> rdf:type owl:ObjectProperty .
+dul:hasSetting rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval> owl:propertyChainAxiom ( <http://purl.org/vocab/frbr/core#embodiment>
-                                                                                                 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval>
-                                                                                               ) .
+dul:hasTimeInterval owl:propertyChainAxiom ( frbr:embodiment
+                                             dul:hasTimeInterval
+                                           ) .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction> rdf:type owl:ObjectProperty .
+dul:includesAction rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn> rdf:type owl:ObjectProperty .
+dul:isParticipantIn rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> rdf:type owl:ObjectProperty ;
-                                                                     rdfs:domain <https://purl.archive.org/people-and-media#BiographicalSituation> .
+dul:isSettingFor rdf:type owl:ObjectProperty ;
+                 rdfs:domain pim:BiographicalSituation .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies> rdf:type owl:ObjectProperty ;
-                                                                  rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ;
-                                                                  rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> .
+dul:satisfies rdf:type owl:ObjectProperty ;
+              rdfs:domain dul:Situation ;
+              rdfs:range dul:Description .
 
 
 ###  http://www.w3.org/2006/time#hasBeginning
 <http://www.w3.org/2006/time#hasBeginning> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval> ;
+                                           rdfs:domain dul:TimeInterval ;
                                            rdfs:range <http://www.w3.org/2006/time#Instant> .
 
 
 ###  http://www.w3.org/2006/time#hasEnd
 <http://www.w3.org/2006/time#hasEnd> rdf:type owl:ObjectProperty ;
-                                     rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval> ;
+                                     rdfs:domain dul:TimeInterval ;
                                      rdfs:range <http://www.w3.org/2006/time#Instant> .
 
 
 ###  https://purl.archive.org/domain/urbooks#numberOfRatings
-<https://purl.archive.org/domain/urbooks#numberOfRatings> rdfs:subPropertyOf urw:isLinkedTo .
+urb:numberOfRatings rdfs:subPropertyOf urw:isLinkedTo .
 
 
 ###  https://purl.archive.org/domain/urbooks#numberOfReaders
-<https://purl.archive.org/domain/urbooks#numberOfReaders> rdfs:subPropertyOf urw:isLinkedTo .
+urb:numberOfReaders rdfs:subPropertyOf urw:isLinkedTo .
 
 
 ###  https://purl.archive.org/domain/urbooks#rated
-<https://purl.archive.org/domain/urbooks#rated> rdfs:subPropertyOf urw:isLinkedTo .
+urb:rated rdfs:subPropertyOf urw:isLinkedTo .
+
+
+###  https://purl.archive.org/domain/urwriters#authorTopic
+urw:authorTopic rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf urw:isLinkedTo .
 
 
 ###  https://purl.archive.org/domain/urwriters#birthCountry
 urw:birthCountry rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole> .
+                 rdfs:subPropertyOf dul:hasRole .
 
 
 ###  https://purl.archive.org/domain/urwriters#birthYear
 urw:birthYear rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole> .
+              rdfs:subPropertyOf dul:hasRole .
 
 
 ###  https://purl.archive.org/domain/urwriters#countryOfBirth
 urw:countryOfBirth rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf urw:isLinkedTo ;
-                   owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting>
-                                            <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor>
+                   owl:propertyChainAxiom ( dul:hasSetting
+                                            dul:isSettingFor
                                             urw:birthCountry
                                           ) .
 
@@ -152,63 +164,79 @@ urw:countryOfBirth rdf:type owl:ObjectProperty ;
 ###  https://purl.archive.org/domain/urwriters#countryOfDeath
 urw:countryOfDeath rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf urw:isLinkedTo ;
-                   owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting>
-                                            <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor>
+                   owl:propertyChainAxiom ( dul:hasSetting
+                                            dul:isSettingFor
                                             urw:deathCountry
                                           ) .
 
 
 ###  https://purl.archive.org/domain/urwriters#deathCountry
 urw:deathCountry rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole> .
+                 rdfs:subPropertyOf dul:hasRole .
 
 
 ###  https://purl.archive.org/domain/urwriters#deathYear
 urw:deathYear rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole> .
+              rdfs:subPropertyOf dul:hasRole .
+
+
+###  https://purl.archive.org/domain/urwriters#gender
+urw:gender rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf urw:hasPersonalAttribute .
+
+
+###  https://purl.archive.org/domain/urwriters#hasPersonalAttribute
+urw:hasPersonalAttribute rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/domain/urwriters#isLinkedTo
-urw:isLinkedTo rdf:type owl:ObjectProperty .
+urw:isLinkedTo rdf:type owl:ObjectProperty ;
+               owl:propertyChainAxiom ( prov:wasAttributedTo
+                                        frbr:subject
+                                      ) .
 
 
 ###  https://purl.archive.org/domain/urwriters#publishingLanguage
 urw:publishingLanguage rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf urw:isLinkedTo ;
-                       owl:propertyChainAxiom ( <http://purl.org/vocab/frbr/core#embodiment>
-                                                <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn>
+                       owl:propertyChainAxiom ( frbr:embodiment
+                                                dul:isParticipantIn
                                                 dcterms:language
                                               ) .
 
 
 ###  https://purl.archive.org/domain/urwriters#wasPublishedBy
 urw:wasPublishedBy rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf urw:isLinkedTo .
+                   rdfs:subPropertyOf urw:isLinkedTo ;
+                   owl:propertyChainAxiom ( frbr:embodiment
+                                            dul:isParticipantIn
+                                            prov:wasAssociatedWith
+                                          ) .
 
 
 ###  https://purl.archive.org/domain/urwriters#wasPublishedWhen
 urw:wasPublishedWhen rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf urw:isLinkedTo ;
-                     owl:propertyChainAxiom ( <http://purl.org/vocab/frbr/core#embodiment>
-                                              <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn>
-                                              <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval>
+                     owl:propertyChainAxiom ( frbr:embodiment
+                                              dul:isParticipantIn
+                                              dul:hasTimeInterval
                                             ) .
 
 
 ###  https://purl.archive.org/domain/urwriters#wasPublishedWhere
 urw:wasPublishedWhere rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf urw:isLinkedTo ;
-                      owl:propertyChainAxiom ( <http://purl.org/vocab/frbr/core#embodiment>
-                                               <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn>
-                                               <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation>
+                      owl:propertyChainAxiom ( frbr:embodiment
+                                               dul:isParticipantIn
+                                               dul:hasLocation
                                              ) .
 
 
 ###  https://purl.archive.org/domain/urwriters#yearOfBirth
 urw:yearOfBirth rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf urw:isLinkedTo ;
-                owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting>
-                                         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor>
+                owl:propertyChainAxiom ( dul:hasSetting
+                                         dul:isSettingFor
                                          urw:birthYear
                                        ) .
 
@@ -216,8 +244,8 @@ urw:yearOfBirth rdf:type owl:ObjectProperty ;
 ###  https://purl.archive.org/domain/urwriters#yearOfDeath
 urw:yearOfDeath rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf urw:isLinkedTo ;
-                owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting>
-                                         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor>
+                owl:propertyChainAxiom ( dul:hasSetting
+                                         dul:isSettingFor
                                          urw:deathYear
                                        ) .
 
@@ -226,13 +254,17 @@ urw:yearOfDeath rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://schema.org/url
+schema:url rdf:type owl:DatatypeProperty .
+
+
 ###  https://purl.archive.org/domain/urwriters#hasIdentifier
 urw:hasIdentifier rdf:type owl:DatatypeProperty .
 
 
 ###  https://purl.archive.org/domain/urwriters#hasIntervalDate
 urw:hasIntervalDate rdf:type owl:DatatypeProperty ;
-                    rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval> .
+                    rdfs:domain dul:TimeInterval .
 
 
 ###  https://purl.archive.org/domain/urwriters#hasIntervalEndDate
@@ -260,37 +292,37 @@ urw:mobilityScore rdf:type owl:DatatypeProperty .
 #################################################################
 
 ###  http://purl.obolibrary.org/obo/NCIT_C17357
-<http://purl.obolibrary.org/obo/NCIT_C17357> rdf:type owl:Class ;
-                                             owl:equivalentClass urw:Gender .
+obo:NCIT_C17357 rdf:type owl:Class ;
+                owl:equivalentClass urw:Gender .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> rdf:type owl:Class .
+dul:Action rdf:type owl:Class .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> rdf:type owl:Class .
+dul:Description rdf:type owl:Class .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> rdf:type owl:Class .
+dul:Group rdf:type owl:Class .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> rdf:type owl:Class .
+dul:Place rdf:type owl:Class .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> rdf:type owl:Class .
+dul:Role rdf:type owl:Class .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> rdf:type owl:Class .
+dul:Situation rdf:type owl:Class .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval
-<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval> rdf:type owl:Class ;
-                                                                     rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> .
+dul:TimeInterval rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> .
 
 
 ###  http://www.w3.org/2006/time#Instant
@@ -303,45 +335,45 @@ urw:mobilityScore rdf:type owl:DatatypeProperty .
 
 
 ###  http://www.w3.org/ns/prov#Person
-<http://www.w3.org/ns/prov#Person> rdf:type owl:Class .
+prov:Person rdf:type owl:Class .
 
 
 ###  https://cidoc-crm.org/html/cidoc_crm_v7.1.1.html#E67
 <https://cidoc-crm.org/html/cidoc_crm_v7.1.1.html#E67> rdf:type owl:Class ;
                                                        owl:equivalentClass urw:Birth ;
-                                                       rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+                                                       rdfs:subClassOf pim:BiographicalSituation .
 
 
 ###  https://cidoc-crm.org/html/cidoc_crm_v7.1.1.html#E69
 <https://cidoc-crm.org/html/cidoc_crm_v7.1.1.html#E69> rdf:type owl:Class ;
                                                        owl:equivalentClass urw:Death ;
-                                                       rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+                                                       rdfs:subClassOf pim:BiographicalSituation .
 
 
 ###  https://purl.archive.org/domain/urwriters#Birth
 urw:Birth rdf:type owl:Class ;
-          rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+          rdfs:subClassOf pim:BiographicalSituation .
 
 
 ###  https://purl.archive.org/domain/urwriters#Continent
 urw:Continent rdf:type owl:Class ;
-              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+              rdfs:subClassOf dul:Place ;
               owl:disjointWith urw:Country .
 
 
 ###  https://purl.archive.org/domain/urwriters#Country
 urw:Country rdf:type owl:Class ;
-            rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> .
+            rdfs:subClassOf dul:Place .
 
 
 ###  https://purl.archive.org/domain/urwriters#CountryRole
 urw:CountryRole rdf:type owl:Class ;
-                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> .
+                rdfs:subClassOf dul:Role .
 
 
 ###  https://purl.archive.org/domain/urwriters#Death
 urw:Death rdf:type owl:Class ;
-          rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+          rdfs:subClassOf pim:BiographicalSituation .
 
 
 ###  https://purl.archive.org/domain/urwriters#EndDate
@@ -357,59 +389,59 @@ urw:FormerColony rdf:type owl:Class ;
 
 ###  https://purl.archive.org/domain/urwriters#Gender
 urw:Gender rdf:type owl:Class ;
-           rdfs:subClassOf <https://purl.archive.org/people-and-media#PersonalAttribute> .
+           rdfs:subClassOf pim:PersonalAttribute .
 
 
 ###  https://purl.archive.org/domain/urwriters#MigationReason
 urw:MigationReason rdf:type owl:Class ;
-                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> .
+                   rdfs:subClassOf dul:Description .
 
 
 ###  https://purl.archive.org/domain/urwriters#Migrating
 urw:Migrating rdf:type owl:Class ;
-              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> .
+              rdfs:subClassOf dul:Action .
 
 
 ###  https://purl.archive.org/domain/urwriters#Migration
 urw:Migration rdf:type owl:Class ;
               owl:equivalentClass [ owl:intersectionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies> ;
+                                                                                  owl:onProperty dul:satisfies ;
                                                                                   owl:someValuesFrom urw:MigrationPlan
                                                                                 ]
                                                                                 [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies> ;
+                                                                                  owl:onProperty dul:satisfies ;
                                                                                   owl:allValuesFrom urw:MigrationPlan
                                                                                 ]
                                                                               ) ;
                                                            rdf:type owl:Class
                                                          ]
                                                          [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction> ;
+                                                           owl:onProperty dul:includesAction ;
                                                            owl:someValuesFrom urw:Migrating
                                                          ]
                                                          [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction> ;
+                                                           owl:onProperty dul:includesAction ;
                                                            owl:allValuesFrom urw:Migrating
                                                          ]
                                                          [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                           owl:onProperty dul:isSettingFor ;
                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place>
+                                                           owl:onClass dul:Place
                                                          ]
                                                        ) ;
                                     rdf:type owl:Class
                                   ] ;
-              rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+              rdfs:subClassOf pim:BiographicalSituation .
 
 
 ###  https://purl.archive.org/domain/urwriters#MigrationPlan
 urw:MigrationPlan rdf:type owl:Class ;
-                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> .
+                  rdfs:subClassOf dul:Description .
 
 
 ###  https://purl.archive.org/domain/urwriters#Minority
 urw:Minority rdf:type owl:Class ;
-             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> .
+             rdfs:subClassOf dul:Group .
 
 
 ###  https://purl.archive.org/domain/urwriters#PlaceOfArrival
@@ -431,29 +463,29 @@ urw:StartDate rdf:type owl:Class ;
 urw:TimeIndexedPersonStatus rdf:type owl:Class ;
                             owl:equivalentClass [ rdf:type owl:Class ;
                                                   owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
-                                                                                         owl:someValuesFrom <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place>
+                                                                                         owl:onProperty dul:isSettingFor ;
+                                                                                         owl:someValuesFrom dul:Place
                                                                                        ]
                                                                                        [ rdf:type owl:Restriction ;
-                                                                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                                                         owl:onProperty dul:isSettingFor ;
                                                                                          owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
                                                                                        ]
                                                                                      ) ;
                                                                   rdf:type owl:Class
                                                                 ]
                                                                 [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                                  owl:onProperty dul:isSettingFor ;
                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                  owl:onClass <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval>
+                                                                  owl:onClass dul:TimeInterval
                                                                 ]
                                                               )
                                                 ] ;
-                            rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+                            rdfs:subClassOf pim:BiographicalSituation .
 
 
 ###  https://purl.archive.org/domain/urwriters#Transnational
 urw:Transnational rdf:type owl:Class ;
-                  rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalRole> .
+                  rdfs:subClassOf pim:BiographicalRole .
 
 
 ###  https://purl.archive.org/domain/urwriters#Year
@@ -461,21 +493,21 @@ urw:Year rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/people-and-media#BiographicalRole
-<https://purl.archive.org/people-and-media#BiographicalRole> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> .
+pim:BiographicalRole rdf:type owl:Class ;
+                     rdfs:subClassOf dul:Role .
 
 
 ###  https://purl.archive.org/people-and-media#BiographicalSituation
-<https://purl.archive.org/people-and-media#BiographicalSituation> rdf:type owl:Class ;
-                                                                  owl:disjointWith <https://purl.archive.org/people-and-media#Reception> .
+pim:BiographicalSituation rdf:type owl:Class ;
+                          owl:disjointWith pim:Reception .
 
 
 ###  https://purl.archive.org/people-and-media#PersonalAttribute
-<https://purl.archive.org/people-and-media#PersonalAttribute> rdf:type owl:Class .
+pim:PersonalAttribute rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/people-and-media#Reception
-<https://purl.archive.org/people-and-media#Reception> rdf:type owl:Class .
+pim:Reception rdf:type owl:Class .
 
 
 #################################################################

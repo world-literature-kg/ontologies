@@ -14,7 +14,7 @@
     <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://ontologydesignpatterns.org/wiki/index.php?title=Special:ClickHandler&amp;link=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl&amp;message=Ontology%20Ontology:DOLCE+DnS%20Ultralite&amp;from_page_id=1129&amp;update=update"/>
     <uri id="Imports Wizard Entry" name="https://purl.archive.org/people-and-media" uri="file:/home/marco/semantic-aware-bias/ontologies/pim/PeopleInTheMedia.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1733558792377" name="https://purl.archive.org/domain/urbooks" uri="urbooks.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1733558792377" name="https://purl.archive.org/domain/urwriters" uri="urwriters.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1733561337843" name="https://purl.archive.org/domain/urbooks" uri="urbooks.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1733561337843" name="https://purl.archive.org/domain/urwriters" uri="urwriters.rdf"/>
     </group>
 </catalog>

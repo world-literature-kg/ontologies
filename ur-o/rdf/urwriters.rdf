@@ -4,13 +4,20 @@
      xmlns:cc="http://web.resource.org/cc/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:oa="http://www.w3.org/ns/oa#"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:pim="https://purl.archive.org/people-and-media#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:urb="https://purl.archive.org/domain/urbooks#"
      xmlns:urw="https://purl.archive.org/domain/urwriters#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:frbr="http://purl.org/vocab/frbr/core#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:schema="http://schema.org/"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://purl.archive.org/domain/urwriters">
         <owl:imports rdf:resource="https://purl.archive.org/domain/urbooks"/>
@@ -205,6 +212,14 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     
 
 
+    <!-- https://purl.archive.org/domain/urwriters#authorTopic -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#authorTopic">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.archive.org/domain/urwriters#birthCountry -->
 
     <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#birthCountry">
@@ -263,9 +278,28 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     
 
 
+    <!-- https://purl.archive.org/domain/urwriters#gender -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#gender">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#hasPersonalAttribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/domain/urwriters#hasPersonalAttribute -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#hasPersonalAttribute"/>
+    
+
+
     <!-- https://purl.archive.org/domain/urwriters#isLinkedTo -->
 
-    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#isLinkedTo">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAttributedTo"/>
+            <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#subject"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
@@ -286,6 +320,11 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
 
     <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urwriters#wasPublishedBy">
         <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/domain/urwriters#isLinkedTo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#embodiment"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -350,6 +389,12 @@ Stranisci, Marco Antonio, Eleonora Bernasconi, Viviana Patti, Stefano Ferilli, M
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://schema.org/url -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/url"/>
     
 
 
