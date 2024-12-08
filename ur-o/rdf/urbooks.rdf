@@ -310,6 +310,14 @@
     <!-- https://purl.archive.org/domain/urbooks#Prize -->
 
     <owl:Class rdf:about="https://purl.archive.org/domain/urbooks#Prize">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/people-and-media#Reception"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#PrizeGiving -->
+
+    <owl:Class rdf:about="https://purl.archive.org/domain/urbooks#PrizeGiving">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">

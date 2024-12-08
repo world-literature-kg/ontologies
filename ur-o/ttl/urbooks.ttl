@@ -194,18 +194,23 @@ urb:Nominated rdf:type owl:Class ;
 
 ###  https://purl.archive.org/domain/urbooks#Prize
 urb:Prize rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Class ;
-                                owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
-                                                owl:someValuesFrom urb:Awarded
-                                              ]
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
-                                                owl:someValuesFrom urb:Nominated
-                                              ]
-                                            )
-                              ] ;
-          rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
+          rdfs:subClassOf <https://purl.archive.org/people-and-media#Reception> .
+
+
+###  https://purl.archive.org/domain/urbooks#PrizeGiving
+urb:PrizeGiving rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                      owl:someValuesFrom urb:Awarded
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                      owl:someValuesFrom urb:Nominated
+                                                    ]
+                                                  )
+                                    ] ;
+                rdfs:subClassOf <https://purl.archive.org/people-and-media#BiographicalSituation> .
 
 
 ###  https://purl.archive.org/domain/urbooks#ProfessionalRole
@@ -235,6 +240,11 @@ urb:Publication rdf:type owl:Class ;
                                       rdf:type owl:Class
                                     ] ;
                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> .
+
+
+###  https://purl.archive.org/domain/urbooks#Publisher
+urb:Publisher rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/prov#Organization> .
 
 
 ###  https://purl.archive.org/domain/urbooks#WebManifestation

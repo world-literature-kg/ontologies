@@ -196,6 +196,16 @@ urw:isLinkedTo rdf:type owl:ObjectProperty ;
                                       ) .
 
 
+###  https://purl.archive.org/domain/urwriters#links
+urw:links rdf:type owl:ObjectProperty .
+
+
+###  https://purl.archive.org/domain/urwriters#publishes
+urw:publishes rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf urw:links ;
+              owl:inverseOf urw:wasPublishedBy .
+
+
 ###  https://purl.archive.org/domain/urwriters#publishingLanguage
 urw:publishingLanguage rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf urw:isLinkedTo ;
