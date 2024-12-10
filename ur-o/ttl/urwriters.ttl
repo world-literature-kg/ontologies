@@ -200,8 +200,8 @@ urw:isLinkedTo rdf:type owl:ObjectProperty ;
 urw:links rdf:type owl:ObjectProperty .
 
 
-###  https://purl.archive.org/domain/urwriters#publishes
-urw:publishes rdf:type owl:ObjectProperty ;
+###  https://purl.archive.org/domain/urwriters#published
+urw:published rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf urw:links ;
               owl:inverseOf urw:wasPublishedBy .
 

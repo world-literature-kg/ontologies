@@ -60,6 +60,11 @@ urb:expertGeneratedSubject rdf:type owl:ObjectProperty ;
                            rdfs:range <http://purl.org/vocab/frbr/core#Subject> .
 
 
+###  https://purl.archive.org/domain/urbooks#geographicalSubject
+urb:geographicalSubject rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#subject> .
+
+
 ###  https://purl.archive.org/domain/urbooks#numberOfRatings
 urb:numberOfRatings rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf owl:topObjectProperty .

@@ -92,6 +92,14 @@
     
 
 
+    <!-- https://purl.archive.org/domain/urbooks#geographicalSubject -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#geographicalSubject">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#subject"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.archive.org/domain/urbooks#numberOfRatings -->
 
     <owl:ObjectProperty rdf:about="https://purl.archive.org/domain/urbooks#numberOfRatings">
@@ -371,6 +379,14 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/domain/urbooks#Publisher -->
+
+    <owl:Class rdf:about="https://purl.archive.org/domain/urbooks#Publisher">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Organization"/>
     </owl:Class>
     
 
